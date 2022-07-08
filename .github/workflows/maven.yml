@@ -22,5 +22,9 @@ jobs:
         java-version: '17'
         distribution: 'adopt'
         cache: maven
-    - name: Build with Maven
-      run: mvn -B package --file pom.xml
+    - name: Compile Stage
+      run: mvn clean compile -DskipTests=true
+    - name: Test Stage
+      run: mvn test
+    - name: Build Stage
+      run: mvn -B package --file pom.xml -DskipTests=true
