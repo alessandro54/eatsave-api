@@ -37,7 +37,7 @@ class RestaurantServiceTest {
         assertEquals(restaurants.get(0).getClass(), Restaurant.class);
     }
     @Test
-    void saveRestaurant() {
+    void createRestaurant() {
         when(restaurantRepository.save(Mockito.any(Restaurant.class))).thenReturn(res);
         Restaurant restaurant = restaurantService.createRestaurant(res);
         assertNotNull(restaurant);
